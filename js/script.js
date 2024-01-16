@@ -9,3 +9,10 @@ const numbListSet = new Set();
 // Creo un array di appoggio per i numeri scritti dall'utente
 const numbToWriteList = [];
 
+// Genero numeri da 1 a 20 fino a quando non sono 5 totali
+while (numbListSet.size < 5) {
+    const randomNumb = Math.floor(Math.random() * 21);
+
+    // Aggiungo i numeri generati al set
+    numbListSet.add(randomNumb);
+}
