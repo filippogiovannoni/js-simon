@@ -16,3 +16,39 @@ while (numbListSet.size < 5) {
     // Aggiungo i numeri generati al set
     numbListSet.add(randomNumb);
 }
+
+// Trasformo il set in un array
+const numbListArr = Array.from(numbListSet)
+
+// Inserisco l'array nel wrapper
+numbWrapper.insertAdjacentHTML('beforeend', numbListArr)
+
+console.log(numbListArr);
+
+// Salvo in una variabile la funzione setTimeout
+const clock = setTimeout(myFunction, 3000)
+
+function myFunction() {
+
+    // Svuoto la pagina
+    numbWrapper.innerHTML = ''
+
+    // Chiedo per 5 volte il numero all'utente 
+    for (let i = 0; i < 5; i++) {
+       const numbToWrite =  Number(prompt('Inserisci un numero da 1 a 20'));
+    
+       // Pusho i numeri all'interno dell'array
+       numbToWriteList.push(numbToWrite)
+       
+    }
+    
+    // Filtro l'array di numeri generati e restituisco l'array di numeri indovinati
+    const guessedNumbers = numbListArr.filter(number => {
+        return numbToWriteList.includes(number)
+    })
+
+    // Tramite un alert visualizzo quanti numeri sono stati indovinati e quali numeri
+    alert(`I numeri che hai indovinato sono ${guessedNumbers.length}: ${guessedNumbers}`)
+}
+
+
